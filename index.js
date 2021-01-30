@@ -8,7 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended'
   ],
   rules: {
-    '@typescript-eslint/array-type': ['error', 'generic'],
+    '@typescript-eslint/array-type': ['error', {"default": "generic"}],
     '@typescript-eslint/ban-types': ['error', {
       types: {
         'Boolean': {
@@ -64,11 +64,12 @@ module.exports = {
     '@typescript-eslint/prefer-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/camelcase': ['error', {
-      properties: 'never'
+    '@typescript-eslint/naming-convention': ['error', {
+      'format': ['camelCase'],
+      'selector': 'variable'
     }],
-    '@typescript-eslint/no-object-literal-type-assertion': ['error', {
-      allowAsParameter: true
+    '@typescript-eslint/consistent-type-assertions': ['error', {
+      assertionStyle: 'as'
     }]
   }
 }
